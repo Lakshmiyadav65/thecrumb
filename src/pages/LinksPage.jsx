@@ -24,21 +24,21 @@ export default function LinksPage() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-[1100px] mx-auto space-y-8">
       {/* Page header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between gap-6">
         <div>
           <h1 className="font-display text-3xl font-semibold text-gray-900">Manage Your Links</h1>
-          <p className="mt-1 text-sm text-gray-500">Add, edit, and organize your bio links</p>
+          <p className="mt-2 text-sm text-gray-500">Add, edit, and organize your bio links</p>
         </div>
 
         {/* Copy link badge */}
         <button
           onClick={handleCopy}
-          className="flex items-center gap-2.5 px-5 py-2.5 bg-surface-card border border-gray-200 rounded-xl hover:border-brand-300 hover:shadow-card transition-all group"
+          className="flex items-center gap-3 px-5 py-3 bg-surface-card border border-gray-200 rounded-xl hover:border-brand-300 hover:shadow-card transition-all group shrink-0"
         >
-          <div className="w-7 h-7 rounded-lg bg-brand-50 flex items-center justify-center">
-            <ExternalLink size={14} className="text-brand-500" />
+          <div className="w-8 h-8 rounded-lg bg-brand-50 flex items-center justify-center shrink-0">
+            <ExternalLink size={15} className="text-brand-500" />
           </div>
           <span className="text-sm text-gray-600 font-medium">thecrumb.co/lakshmiyadav044</span>
           <div className="w-px h-5 bg-gray-200" />
@@ -51,12 +51,12 @@ export default function LinksPage() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 p-1 bg-gray-100 rounded-xl w-fit">
+      <div className="flex gap-1 p-1.5 bg-gray-100 rounded-xl w-fit">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-5 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+            className={`px-6 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
               activeTab === tab
                 ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-500 hover:text-gray-700'
@@ -67,9 +67,9 @@ export default function LinksPage() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Add link form */}
-        <div className="lg:col-span-2 bg-surface-card rounded-2xl border border-gray-100 p-6 shadow-card h-fit">
+        <div className="lg:col-span-5 bg-surface-card rounded-2xl border border-gray-100 p-7 shadow-card h-fit">
           <h3 className="text-base font-semibold text-gray-900 mb-5">Add New Link</h3>
 
           <div className="space-y-4">
@@ -117,7 +117,7 @@ export default function LinksPage() {
         </div>
 
         {/* Links list */}
-        <div className="lg:col-span-3 space-y-3">
+        <div className="lg:col-span-7 space-y-3">
           {demoLinks.map((link) => (
             <div
               key={link.id}

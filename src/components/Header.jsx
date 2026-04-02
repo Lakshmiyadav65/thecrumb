@@ -14,7 +14,7 @@ export default function Header() {
   const title = pageTitles[location.pathname] || 'Dashboard'
 
   return (
-    <header className="h-16 px-8 flex items-center justify-between border-b border-black/5 bg-white/60 backdrop-blur-sm shrink-0">
+    <header className="h-[65px] px-10 flex items-center justify-between border-b border-black/[0.06] bg-white/70 backdrop-blur-sm shrink-0">
       <div>
         <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
       </div>
